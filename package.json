@@ -4,11 +4,14 @@
   "description": "",
   "main": "App.js",
   "scripts": {
-    "format": "prettier \"src/**/*.{js,html}\" --write",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "build": "parcel build --public-url ./dist/ src/index.html",
+    "clear-build-cache": "rm -rf .cache/ dist/",
     "dev": "parcel src/index.html",
-    "dev:mock": "cross-env PET_MOCK=mock npm run dev"
+    "dev:mock": "cross-env PET_MOCK=mock npm run dev",
+    "format": "prettier \"src/**/*.{js,html}\" --write",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "start": "npm run build && babel-node server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -25,15 +28,20 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "parcel-bundler": "^1.12.4",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
   },
   "dependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/node": "^7.12.10",
     "@emotion/babel-preset-css-prop": "^11.0.0",
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.1.4",
     "@frontendmasters/pet": "^1.0.3",
     "@reach/router": "^1.3.4",
+    "express": "^4.17.1",
     "react": "^17.0.1",
+    "react-com": "^1.0.6",
     "react-dom": "^16.14.0"
   },
   "browserslist": [
