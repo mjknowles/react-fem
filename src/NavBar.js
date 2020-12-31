@@ -10,7 +10,13 @@ const NavBar = () => {
     `}
   >
     <Link to="/">Adopt Me</Link>
-    <span role="img" aria-label="logo">
+    <span
+      css={css`
+        font-size: 60px;
+      `}
+      role="img"
+      aria-label="logo"
+    >
       🐶
     </span>
   </header>;
